@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallery</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            // input 태그(버튼)를 찾는다.
+            let button=document.querySelector("#button1","#button2");
+            // img 태그를 찾는다.
+            let img=document.querySelector("img");
+            let img1="img/js0.jpg";
+            let img2="img/js1.png";
+            let img3="img/js2.png";
+            button1.addEventListener("click", function(e){
+                // sec속성의 값을 읽는다.
+                let src=img.getAttribute("src");
+                if(src===img1){
+                    img.setAttribute("src", img2); //src속성값을 변경한다.
+                }
+                else if(src===img2){
+                    img.setAttribute("src", img3);
+                }
+                else{
+                    img.setAttribute("src", img1);
+                }
+            });
+            button2.addEventListener("click", function(e){
+                // sec속성의 값을 읽는다.
+                let src=img.getAttribute("src");
+                if(src===img1){
+                    img.setAttribute("src", img3); //src속성값을 변경한다.
+                }
+                else if(src===img2){
+                    img.setAttribute("src", img1);
+                }
+                else{
+                    img.setAttribute("src", img2);
+                }
+            });
+        });
+    </script>
+    <style>
+        body{
+            margin:50px;
+        }
+        #button1{
+            margin-left: 310px;
+        }
+        #button1{
+            background-color: rgb(181, 213, 117);
+            border-color: green;
+            padding: 5px;
+            border-radius: 7px;
+        }
+        #button1:hover{
+            background-color: green;
+            border-color: yellowgreen;
+            color: white;
+        }
+        #button2{
+            background-color: rgb(181, 213, 117);
+            border-color: green;
+            padding: 5px;
+            border-radius: 7px;
+        }
+        #button2:hover{
+            background-color: green;
+            border-color: yellowgreen;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <img src="img/js0.jpg" width="400px" height="300px"><br>
+    <input id="button2" type="button" value="Prev">
+    <input id="button1" type="button" value="Next">
+</body>
+</html>
